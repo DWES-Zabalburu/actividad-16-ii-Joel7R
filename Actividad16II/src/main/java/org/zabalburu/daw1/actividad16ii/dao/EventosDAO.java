@@ -6,7 +6,6 @@ package org.zabalburu.daw1.actividad16ii.dao;
 
 import java.util.List;
 import org.zabalburu.daw1.actividad16ii.modelo.Evento;
-import org.zabalburu.daw1.actividad16ii.modelo.Persona;
 
 /**
  *
@@ -14,10 +13,9 @@ import org.zabalburu.daw1.actividad16ii.modelo.Persona;
  */
 public interface EventosDAO {
     
+    Evento nuevoEvento(Evento nuevo);
+    void eliminarEvento(Evento eliminar);
+    Evento modificarEvento(Evento modificar);
     List<Evento> getEventos();
-    void nuevoEvento(Evento nuevo);
-    Persona getPersona(String dni);
-    void nuevaPersona(Persona nueva);
-    void eliminarPersona(String dni);
-    int logIn(String username, String password); 
+    Evento buscarEvento(int id);
 }

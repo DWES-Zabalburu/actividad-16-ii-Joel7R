@@ -45,26 +45,10 @@ public class Actividad16II {
                                                                 "\n3. Salir" +
                                                                 "\n\nOpción [1-3]"));   
             switch(opt){
-                case 1 -> logIn();
-                case 2 -> crearCuenta();
+                case 1 -> {}
+                case 2 -> {}
                 default -> {}
             }
         }
-    }
-
-    private static void logIn() {
-        
-        String username = JOptionPane.showInputDialog("Introduce tu nombre de usuario");
-        String password = JOptionPane.showInputDialog("Introduce tu contraseña");
-        switch(servicio.logIn(username, password)){
-            case 1 -> logIn();
-            case 2 -> JOptionPane.showMessageDialog(null,"El usuario no existe","usuario erróneo",JOptionPane.ERROR_MESSAGE);
-            case 3 -> JOptionPane.showMessageDialog(null,"La contraseña es incorrecta","contraseña erróneo",JOptionPane.ERROR_MESSAGE);
-            default -> {}
-        }
-    }
-    
-    private static void crearCuenta() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
