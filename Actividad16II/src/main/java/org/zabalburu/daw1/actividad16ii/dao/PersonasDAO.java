@@ -14,7 +14,7 @@ public interface PersonasDAO {
     
     Persona nuevaPersona(Persona nueva);
     void eliminarPersona(int id);
-    Persona modificarPersona(Persona modificar);
+    void modificarPersona(Persona modificar);
     Persona[] getPersonas();
     Persona buscarPersona(int id);
     Persona buscarPersona(String dni);

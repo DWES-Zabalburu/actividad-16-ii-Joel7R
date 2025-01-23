@@ -30,7 +30,7 @@ public class Evento {
     private String lugar;
     private boolean mayoriaEdad;
     private double coste;
-    private ArrayList<Persona> personas = new ArrayList<>();
+    private Persona[] personas = new Persona[50];
 
     public Evento(){
         this.id = ++Evento.numEventos;

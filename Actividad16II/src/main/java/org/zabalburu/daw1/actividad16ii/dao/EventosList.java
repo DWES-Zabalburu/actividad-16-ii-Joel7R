@@ -44,12 +44,11 @@ public class EventosList implements EventosDAO {
     }
 
     @Override
-    public Evento modificarEvento(Evento modificar){
+    public void modificarEvento(Evento modificar){
         Evento e = buscarEvento(modificar.getId());
         if (e != null){
             e = modificar;
         }
-        return null;
     }
 
     @Override

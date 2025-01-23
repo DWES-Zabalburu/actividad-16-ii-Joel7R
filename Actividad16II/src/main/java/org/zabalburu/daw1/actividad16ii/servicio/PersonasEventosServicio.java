@@ -16,7 +16,7 @@ import org.zabalburu.daw1.actividad16ii.modelo.Persona;
  *
  * @author joelr
  */
-public class EventosServicio {
+public class PersonasEventosServicio {
     
     private static final PersonasDAO personasdao = new PersonasList();
     private static final EventosDAO eventosdao = new EventosList();
@@ -29,8 +29,8 @@ public class EventosServicio {
         personasdao.eliminarPersona(id);
     }
     
-    public Persona modificarPersona(Persona modificar){
-        return personasdao.modificarPersona(modificar);
+    public void modificarPersona(Persona modificar){
+        personasdao.modificarPersona(modificar);
     }
     
     public Persona[] getPersonas(){
@@ -53,8 +53,8 @@ public class EventosServicio {
         eventosdao.eliminarEvento(eliminar);
     }
     
-    public Evento modificarEvento(Evento modificar){
-        return eventosdao.modificarEvento(modificar);
+    public void modificarEvento(Evento modificar){
+        eventosdao.modificarEvento(modificar);
     }
     
     public List<Evento> getEventos(){

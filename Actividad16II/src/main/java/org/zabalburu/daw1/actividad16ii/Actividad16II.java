@@ -8,7 +8,7 @@ import java.text.DateFormat;
 import java.text.NumberFormat;
 import javax.swing.JOptionPane;
 import org.zabalburu.daw1.actividad16ii.modelo.Evento;
-import org.zabalburu.daw1.actividad16ii.servicio.EventosServicio;
+import org.zabalburu.daw1.actividad16ii.servicio.PersonasEventosServicio;
 
 /**
  *
@@ -16,7 +16,7 @@ import org.zabalburu.daw1.actividad16ii.servicio.EventosServicio;
  */
 public class Actividad16II {
 
-    private static final EventosServicio servicio = new EventosServicio();
+    private static final PersonasEventosServicio servicio = new PersonasEventosServicio();
     private static final DateFormat dfCorto = DateFormat.getDateInstance(DateFormat.SHORT);
     private static final NumberFormat nfMoneda = NumberFormat.getCurrencyInstance();
     private static final NumberFormat nfEnteros = NumberFormat.getIntegerInstance();
