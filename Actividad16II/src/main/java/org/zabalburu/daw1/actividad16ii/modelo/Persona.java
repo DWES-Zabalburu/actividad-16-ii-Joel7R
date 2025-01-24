@@ -5,7 +5,9 @@
 package org.zabalburu.daw1.actividad16ii.modelo;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -48,8 +50,15 @@ public class Persona {
     }
 
     public boolean isMayorEdad(){
-        Date fechaActual = new Date();
-        boolean mayorEdad = ((fechaActual.getTime() - this.fechaNacimiento.getTime())/(365.25 * 24 * 60 * 60 * 1000)) >= 18;
-        return mayorEdad;
+        GregorianCalendar gcHoy = new GregorianCalendar();
+        GregorianCalendar gcFechaNacimiento = new GregorianCalendar();
+        gcFechaNacimiento.setTime(this.fechaNacimiento);
+        int añoActual = gcHoy.get(Calendar.YEAR);
+        int añoNacimiento = gcFechaNacimiento.get(Calendar.YEAR);
+        int edad = añoActual - añoNacimiento;
+        if (gcHoy.get(Calendar.DAY_OF_YEAR) < gcFechaNacimiento.get(Calendar.DAY_OF_YEAR)){
+            edad--;
+        }
+        return edad >= 18;
     }
 }

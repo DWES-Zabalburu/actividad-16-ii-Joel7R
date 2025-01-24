@@ -4,6 +4,8 @@
  */
 package org.zabalburu.daw1.actividad16ii.dao;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.zabalburu.daw1.actividad16ii.modelo.Persona;
 
 /**
@@ -39,20 +41,24 @@ public class PersonasList implements PersonasDAO {
     @Override
     public void modificarPersona(Persona modificar){
         int pos = posicionPersona(modificar.getId());
-        if(pos >= 0){
+        if(pos != -1){
             personas[pos] = modificar;
         }
     }
 
     @Override
-    public Persona[] getPersonas(){
-        return personas;
+    public List<Persona> getPersonas(){
+        List<Persona> personasList = new ArrayList<>();
+        for(Persona p : personas){
+            personasList.add(p);
+        }
+        return personasList;
     }
 
     @Override
     public Persona buscarPersona(int id){
         int pos = posicionPersona(id);
-        if (pos >= 0){
+        if (pos != -1){
             return personas[pos];
         } else {
             return null;

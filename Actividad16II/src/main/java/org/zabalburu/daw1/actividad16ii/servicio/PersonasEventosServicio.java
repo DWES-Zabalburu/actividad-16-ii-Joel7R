@@ -33,7 +33,7 @@ public class PersonasEventosServicio {
         personasdao.modificarPersona(modificar);
     }
     
-    public Persona[] getPersonas(){
+    public List<Persona> getPersonas(){
         return personasdao.getPersonas();
     }
     
@@ -61,7 +61,7 @@ public class PersonasEventosServicio {
         return eventosdao.getEventos();
     }
     
-    public Evento buscarEvento(int id){
-        return eventosdao.buscarEvento(id);
+    public Evento getEvento(int id){
+        return eventosdao.getEvento(id);
     }
 }

@@ -27,17 +27,13 @@ public class EventosList implements EventosDAO {
 
     @Override
     public Evento nuevoEvento(Evento nuevo){
-        if (eventos.indexOf(nuevo) != -1){
-            throw new RuntimeException("Ya existe este evento");
-        } else {
-            eventos.add(nuevo);
-            return nuevo;
-        }
+        eventos.add(nuevo);
+        return nuevo;
     }
 
     @Override
     public void eliminarEvento(Evento eliminar){
-        Evento e = buscarEvento(eliminar.getId());
+        Evento e = getEvento(eliminar.getId());
         if (e != null){
             eventos.remove(e);
         }
@@ -45,7 +41,7 @@ public class EventosList implements EventosDAO {
 
     @Override
     public void modificarEvento(Evento modificar){
-        Evento e = buscarEvento(modificar.getId());
+        Evento e = getEvento(modificar.getId());
         if (e != null){
             e = modificar;
         }
@@ -57,11 +53,10 @@ public class EventosList implements EventosDAO {
     }
 
     @Override
-    public Evento buscarEvento(int id){
-        for(Evento e : eventos){
-            if (e.getId() == id){
-                return e;
-            }
+    public Evento getEvento(int id){
+        int pos = eventos.indexOf(id);
+        if (pos != -1){
+            return eventos.get(pos);
         }
         return null;
     }    
