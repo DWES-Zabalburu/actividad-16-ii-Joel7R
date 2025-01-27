@@ -6,6 +6,7 @@ package org.zabalburu.daw1.actividad16ii.modelo;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,7 +18,6 @@ import lombok.ToString;
  */
 @Getter
 @Setter
-@ToString
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Evento {
     
@@ -30,7 +30,7 @@ public class Evento {
     private String lugar;
     private boolean mayoriaEdad;
     private double coste;
-    private Persona[] personas = new Persona[50];
+    private List<Persona> asistentes = new ArrayList<>();
 
     public Evento(){
         this.id = ++Evento.numEventos;
@@ -44,4 +44,9 @@ public class Evento {
         this.mayoriaEdad = mayoriaEdad;
         this.coste = coste;
     }    
+
+    @Override
+    public String toString() {
+        return "Evento{" + "id=" + id + ", descripcion=" + descripcion + ", fecha=" + fecha + ", lugar=" + lugar + ", mayoriaEdad=" + mayoriaEdad + ", coste=" + coste + '}';
+    }
 }

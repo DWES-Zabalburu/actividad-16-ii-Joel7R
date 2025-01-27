@@ -19,7 +19,6 @@ import lombok.ToString;
  */
 @Getter
 @Setter
-@ToString
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Persona {
     
@@ -31,7 +30,6 @@ public class Persona {
     private String nombre;
     private String apellidos;
     private Date fechaNacimiento;
-    private String username;
     private String password;
     private ArrayList<Evento> eventos = new ArrayList<>();
 
@@ -45,7 +43,6 @@ public class Persona {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.fechaNacimiento = fechaNacimiento;
-        this.username = dni;
         this.password = password;
     }
 
@@ -60,5 +57,10 @@ public class Persona {
             edad--;
         }
         return edad >= 18;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{" + "id=" + id + ", dni=" + dni + ", nombre=" + nombre + ", apellidos=" + apellidos + ", fechaNacimiento=" + fechaNacimiento + ", password=" + password + ", eventos=" + eventos + '}';
     }
 }
