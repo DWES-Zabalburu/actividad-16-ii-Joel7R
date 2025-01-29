@@ -10,7 +10,7 @@ import error.LoginException;
 import org.zabalburu.daw1.actividad16ii.dao.EventosDAO;
 import org.zabalburu.daw1.actividad16ii.dao.EventosList;
 import org.zabalburu.daw1.actividad16ii.dao.PersonasDAO;
-import org.zabalburu.daw1.actividad16ii.dao.PersonasList;
+import org.zabalburu.daw1.actividad16ii.dao.PersonasMatriz;
 import org.zabalburu.daw1.actividad16ii.modelo.Evento;
 import org.zabalburu.daw1.actividad16ii.modelo.Persona;
 
@@ -20,7 +20,7 @@ import org.zabalburu.daw1.actividad16ii.modelo.Persona;
  */
 public class PersonasEventosServicio {
     
-    private static final PersonasDAO personasdao = new PersonasList();
+    private static final PersonasDAO personasdao = new PersonasMatriz();
     private static final EventosDAO eventosdao = new EventosList();
     
     public PersonasEventosServicio(){

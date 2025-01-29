@@ -12,7 +12,7 @@ import org.zabalburu.daw1.actividad16ii.modelo.Persona;
  *
  * @author DAW1
  */
-public class PersonasList implements PersonasDAO {
+public class PersonasMatriz implements PersonasDAO {
     
     private Persona[] personas = new Persona[100];
     private int numPersonas = 0;
