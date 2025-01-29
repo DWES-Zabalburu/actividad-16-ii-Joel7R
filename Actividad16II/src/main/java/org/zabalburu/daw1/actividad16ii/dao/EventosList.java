@@ -53,11 +53,14 @@ public class EventosList implements EventosDAO {
     }
 
     @Override
-    public Evento getEvento(int id){
-        int pos = eventos.indexOf(id);
+    public Evento getEvento(int id) {
+        Evento evt = new Evento();
+        evt.setId(id);
+        int pos = eventos.indexOf(evt);
         if (pos != -1){
             return eventos.get(pos);
+        } else {
+            return null;
         }
-        return null;
-    }    
+    }  
 }
